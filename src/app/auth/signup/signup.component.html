@@ -1,12 +1,48 @@
-<div class="flex flex-column justify-between">
+<div class="flex flex-column justify-center align-center header">
     <div>
-        <div>
+        <div class="header-text">
             KanBan Pro
         </div>
     </div>
-    <div>
-        <mat-card>
-            Hello
-        </mat-card>
-    </div>
+    <mat-card class="card-container">
+        <div class="flex flex-column justify-center align-center">
+            <div>
+                <div class="form-desc">
+                    Try KanBan Pro for free
+                </div>
+            </div>
+            <div class="form-fields">
+                <form class="example-form" [formGroup]="signUpForm">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email">
+                        <!-- <mat-hint>Errors appear instantly!</mat-hint>
+                          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                            Please enter a valid email address
+                          </mat-error>
+                          <mat-error *ngIf="emailFormControl.hasError('required')">
+                            Email is <strong>required</strong>
+                          </mat-error> -->
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width" appearance="outline" autocomplete="none">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput formControlName="password">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width" appearance="outline" aria-autocomplete="none">
+                        <mat-label>Confirm Password</mat-label>
+                        <input type="password" matInput formControlName="confirmPassword"> 
+                    </mat-form-field>
+                </form>
+                <div>
+                    <button mat-flat-button color="primary" class="create-btn" [disabled]="signUpForm.invalid">Create Account</button>
+                </div>
+                <div class="mt-12">
+                   <div class="login-text"> Already have a account ? <span class="login-btn" (click)="navigateLogin()">Login</span> </div>
+                </div>
+            </div>
+
+        </div>
+    </mat-card>
 </div>

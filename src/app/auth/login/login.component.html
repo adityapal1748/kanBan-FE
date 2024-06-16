@@ -1,1 +1,43 @@
-<p>login works!</p>
+<div class="flex flex-column justify-center align-center header">
+    <div>
+        <div class="header-text">
+            KanBan Pro
+        </div>
+    </div>
+    <mat-card class="card-container">
+        <div class="flex flex-column justify-center align-center">
+            <div>
+                <div class="form-desc">
+                    Log in
+                </div>
+            </div>
+            <div class="form-fields">
+                <form class="example-form" [formGroup]="signUpForm">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email">
+                        <!-- <mat-hint>Errors appear instantly!</mat-hint>
+                          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                            Please enter a valid email address
+                          </mat-error>
+                          <mat-error *ngIf="emailFormControl.hasError('required')">
+                            Email is <strong>required</strong>
+                          </mat-error> -->
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width" appearance="outline" autocomplete="none">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput formControlName="password">
+                    </mat-form-field>
+                </form>
+                <div>
+                    <button mat-flat-button color="primary" class="create-btn" [disabled]="signUpForm.invalid">Log in</button>
+                </div>
+                <div class="mt-12">
+                   <div class="login-text"> Don't have a account ? <span class="login-btn" (click)="navigateSignUp()">Sign Up</span> </div>
+                </div>
+            </div>
+
+        </div>
+    </mat-card>
+</div>
